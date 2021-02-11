@@ -1,0 +1,477 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim include="help-jsbsim.xml"> 
+		<description type="string">Sopwith Camel 1F.1 (JSBSim, Historically Accurate FDM &amp; Weapons, Bombable-compatible, ver 2.0)</description>
+		<author type="string">AJ MacLeod, Vivian Meazza, Brent Hugh (Historically accurate JSBSim FDM &amp; weapons, Bombable compatibility)</author>
+		<status type="string">V2.0: Production, guns work, Bombable compatible</status>
+		<rating>
+			<FDM type="int">4.2</FDM>
+			<systems type="int">4</systems>
+			<cockpit type="int">4</cockpit>
+			<model type="int">5</model>
+		</rating>
+
+		<flight-model>jsb</flight-model>
+		<aero>sopwithCamel1F1jsb</aero>
+    <model-hz type="double">120.0</model-hz> <!-- experiment; 120hz is usual-->
+   
+  <startup>
+		<splash-texture>JSBSim-camel-splash2d-JSBSim.rgb</splash-texture>
+    <splash-title>JSBSim Sopwith Camel (Bombable Compatible)</splash-title>
+  </startup>
+   
+		<sound>
+			<path>Aircraft/sopwithCamel-Bombable/Sounds/yasim/sopwithCamel-sound-jsbsim.xml</path>
+		</sound>
+
+		<virtual-cockpit userarchive="y">true</virtual-cockpit>
+		<allow-toggle-cockpit userarchive="y">false</allow-toggle-cockpit>
+		<rendering>
+			<camera-group>
+				<znear type="double">0.1</znear>
+			</camera-group>
+		</rendering>
+		<model>
+			<path>Aircraft/sopwithCamel-Bombable/Models/sopwithCamel-model-Y.xml</path>
+			<livery>
+				<file type="string">10sqn</file>
+				<nose-texture type="bool">false</nose-texture>
+			</livery>
+			<variant type="int" >0</variant>
+			<!--<texture-path>Aircraft/sopwithCamel-Bombable/Models/Textures</texture-path>-->
+			<camel>
+				<extra-details userarchive="y"
+			              type="bool">false</extra-details>
+				<show-pilot userarchive="y"
+										type="bool">false</show-pilot>
+				<show-pennants-flight-commander userarchive="y"
+										type="bool">true</show-pennants-flight-commander>
+        <show-face-mask userarchive="y"
+										type="bool">false</show-face-mask>    
+        <show-shadow userarchive="y"
+										type="bool">true</show-shadow>                                                                                                        
+                                                                                                                                
+			</camel>
+		</model>
+   
+   <systems>
+   <!-- used by the ALS volume shadow routine -->
+    <property-rule n="101">
+       <name>altitude-agl-m</name>
+       <path>Aircraft/sopwithCamel-Bombable/Systems/altitudeAGL.xml</path>
+    </property-rule>
+    </systems>
+
+		<ai>
+			<engines>
+				<engine>
+					<smoking type="bool">true</smoking>
+				</engine>
+			</engines>
+		</ai>
+
+		<submodels>
+			<serviceable type="bool">true</serviceable>
+			<path>Aircraft/sopwithCamel-Bombable/Models/camel-alternative-submodels.xml</path>
+		</submodels>
+
+    <!-- Required to make Bombable work over multiplayer -->
+    <!-- String 9 is for Bombable damage/reset messages -->
+    <!-- Int 10,11,... are for various weapons triggers as particular to this aircraft -->
+		<multiplay>
+			<generic>
+				<int n="0"
+							type="int"/>
+				<int n="1"
+						 type="int"/>
+				<float n="0"
+							 type="float"/>
+				<float n="1"
+							 type="float"/>
+				<float n="2"
+							 type="float"/>
+				<string n="9"
+							 type="string"/>			
+				<int n="10"
+							 alias="/controls/armament/trigger" />
+			</generic>
+		</multiplay>
+
+		<view n="0">
+			<internal userarchive="y">true</internal>
+			<config>
+				<x-offset-m userarchive="y">0.0</x-offset-m>
+				<!--Right-->
+				<y-offset-m userarchive="y">0.675</y-offset-m>
+				<!--Up0.654829-->
+				<z-offset-m userarchive="y">1.5749</z-offset-m>
+				<!--Back0.475-->
+
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<default-field-of-view-deg>65</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="1">
+			<config>
+				<target-z-offset-m userarchive="y"
+													 type="double">1.1044</target-z-offset-m>
+			</config>
+		</view>
+		<view n="2">
+			<config>
+				<target-z-offset-m userarchive="y"
+													 type="double">1.1044</target-z-offset-m>
+			</config>
+		</view>
+		<view n="3">
+			<config>
+				<target-z-offset-m userarchive="y"
+													 type="double">1.1044</target-z-offset-m>
+			</config>
+		</view>
+		<view n="4">
+			<config>
+				<target-z-offset-m userarchive="y"
+													 type="double">1.1044</target-z-offset-m>
+			</config>
+		</view>
+		<view n="5">
+			<config>
+				<target-z-offset-m userarchive="y"
+													 type="double">1.1044</target-z-offset-m>
+			</config>
+		</view>
+		<view n="6">
+			<config>
+				<target-z-offset-m userarchive="y"
+													 type="double">1.1044</target-z-offset-m>
+			</config>
+		</view>
+   <!--
+		<view n="105">
+			<name>Ground Crew View</name>
+			<type>lookfrom</type>
+			<config>
+				<internal type="bool">false</internal>
+				<from-model type="bool">false</from-model> -->
+				<!--<from-model-idx type="int">0</from-model-idx>--> <!--
+				<eye-lat-deg-path>/fdm/jsbsim/position/lat-gc-deg</eye-lat-deg-path>
+				<eye-lon-deg-path>/fdm/jsbsim/position/long-gc-deg</eye-lon-deg-path>
+				<eye-alt-ft-path>/fdm/jsbsim/position/terrain-elevation-asl-ft</eye-alt-ft-path>
+				<eye-roll-deg-path>/sim/tower/roll-deg</eye-roll-deg-path>
+				<eye-pitch-deg-path>/sim/tower/pitch-deg</eye-pitch-deg-path>
+				<eye-heading-deg-path>/sim/tower/heading-deg</eye-heading-deg-path>
+				<at-model type="bool">false</at-model>
+				<at-model-idx type="int">0</at-model-idx>
+				<ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+
+				
+				<heading-offset-deg>180</heading-offset-deg>
+				<x-offset-m>0</x-offset-m>
+				
+				<y-offset-m>-0.0</y-offset-m>
+				
+				<z-offset-m>-10.0</z-offset-m>
+				
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<default-field-of-view-deg>60</default-field-of-view-deg>
+			</config>
+		</view>
+   -->
+  <!-- uses Aircraft\Generic\WalkView\ walkview.nas plus Systems/walk-view-keys.xml plus Nasal/camel-walk-views.nas plus this setup here in -set.xml-->
+  <view n="103">         
+   <name>Inspect Aircraft View</name>
+   <internal>true</internal>
+   <config>
+    <!-- x/y/z == right/up/back -->
+    <from-model type="bool">true</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <x-offset-m type="double">  15.00 </x-offset-m>
+    <y-offset-m type="double"> 0.50 </y-offset-m>
+    <z-offset-m type="double"> -1.00 </z-offset-m>
+    <heading-offset-deg type="double"> 90 </heading-offset-deg>
+    <pitch-offset-deg type="double"> 0.0 </pitch-offset-deg>
+    <default-field-of-view-deg type="double"> 65 </default-field-of-view-deg>
+   </config>
+  </view>   
+
+		<menubar>
+			<default>
+				<menu n="10">
+					<label>Camel</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Repair/Un-crash</label>
+						<binding>
+							<command>nasal</command>
+							<script>camel.resetCrashSettings();</script>
+						</binding>
+					</item>                   
+          <item>
+						<label>Toggle manual mixture (realistic)</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>fdm/jsbsim/fcs/automixture-enable</property>
+						</binding>
+					</item>
+					<item>
+						<label>Toggle extra details</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/camel/extra-details</property>
+						</binding>
+					</item>
+					<item>
+						<label>Toggle pilot model</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/camel/show-pilot</property>
+						</binding>
+					</item>
+					<item>
+						<label>Toggle pilot face mask</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/camel/show-face-mask</property>
+						</binding>
+					</item>
+          <item>
+						<label>Toggle Shadow (ALS mode)</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/camel/show-shadow</property>
+						</binding>
+					</item>
+					<item>
+						<label>Toggle flight-commander's pennants</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/camel/show-pennants-flight-commander</property>
+						</binding>
+					</item>                 
+					<item>
+						<label>Reload guns</label>
+						<binding>
+							<command>nasal</command>
+							<script>camel.reload_guns();</script>
+						</binding>
+					</item>
+					<item>
+						<label>Unlimited guns</label>
+						<binding>
+							<command>nasal</command>
+							<script>camel.unlimited_guns();</script>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+	</sim>
+
+	<input>
+	  <keyboard include="Systems/walk-view-keys.xml">
+			<!-- map keys for mag switches  -->
+			<key n="123">
+				<name>{</name>
+				<desc>Mag Switch Left Toggle.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+
+						camel.magneto.toggleleftMagswitch();
+
+					</script>
+				</binding>
+			</key>
+			<key n="125">
+				<name>}</name>
+				<desc>Mag Switch Right Toggle.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+
+						camel.magneto.togglerightMagswitch();
+
+					</script>
+				</binding>
+			</key>
+			<!-- map keys for seat vertical adjust -->
+			<key n="21">
+				<name>CTRL-U</name>
+				<desc>Seat Default.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/seat/vertical-adjust</property>
+					<value type="double">0</value>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-assign</command>
+					<property>sim/current-view/y-offset-m</property>
+					<value type="double">0.675</value>
+				</binding>
+			</key>
+			<key n="85">
+				<name>U</name>
+				<desc>Seat Down.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>/controls/seat/vertical-adjust</property>
+					<step type="double">-0.01</step>
+					<min type="double">-0.05</min>
+					<max type="double">0.05</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">-0.01</step>
+					<min type="double">0.625</min>
+					<max type="double">0.725</max>
+				</binding>
+			</key>
+			<key n="117">
+				<name>u</name>
+				<desc>Seat Up.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>controls/seat/vertical-adjust</property>
+					<step type="double">0.01</step>
+					<min type="double">-0.05</min>
+					<max type="double">0.05</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">0.01</step>
+					<min type="double">0.625</min>
+					<max type="double">0.725</max>
+				</binding>
+			</key>
+			<!-- Livery Box -->
+			<key n="108">
+				<name>l</name>
+				<desc>Show livery select dialog</desc>
+				<binding>
+					<command>nasal</command>
+					<script>aircraft.livery.dialog.toggle()</script>
+				</binding>
+			</key>
+			<!-- Nudge aircraft forward a bit, ie when stuck in the grass -->
+			<key n="110">
+				<name>n</name>
+				<desc>Nudge aircraft (ie, when stuck on the ground)</desc>
+				<binding>
+					<command>nasal</command>
+					<script>camel.nudgeaircraft()</script>
+				</binding>
+			</key>            
+      <!-- Fire gun -->
+      <!-- We do both triggers just to be safe -->
+      <key n="101">
+         <name>e</name>
+         <desc>Gun Trigger</desc> 
+         <binding>
+          <command>property-assign</command>
+          <property>ai/submodels/trigger</property>
+          <value>true</value>
+         </binding>
+         <binding>
+          <command>property-assign</command>
+          <property>controls/armament/trigger</property>
+          <value>true</value>
+         </binding>
+         <mod-up>
+          <binding>
+           <command>property-assign</command>
+           <property>ai/submodels/trigger</property>
+           <value>false</value>
+          </binding>
+          <binding>
+          <command>property-assign</command>
+          <property>controls/armament/trigger</property>
+          <value>false</value>
+         </binding> 
+         </mod-up>
+      </key>
+    </keyboard>
+
+	</input>
+
+<!--  
+  <hud>
+      <path n="1">Aircraft/sopwithCamel-Bombable/Hud/ultra-minimal.xml</path>
+      <visibility n="1">false</visibility>
+      <path n="2">Aircraft/sopwithCamel-Bombable/Hud/ultra-minimal-pip.xml</path>
+      <visibility n="2">false</visibility>
+      <font>
+          <size>7</size>
+      </font>
+  </hud> 
+     -->
+     
+  <hud>
+   <path n="1">Aircraft/sopwithCamel-Bombable/Hud/ultra-minimal.xml</path>
+   <visibility n="1">true</visibility>
+   <palette>
+    <color n="0">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">0.38</red>
+     <green type="float">1.0</green>
+     <blue type="float">0.22</blue>
+    </color>
+    <color n="1">
+     <alpha type="float">0.85</alpha>
+     <antialiased type="bool">true</antialiased>
+     <brightness type="float">0.85</brightness>
+     <transparent type="bool">true</transparent>
+     <red type="float">1.0</red>
+     <green type="float">0.2</green>
+     <blue type="float">0.0</blue>
+    </color>
+   </palette>
+   
+  </hud>
+
+	<yasim>
+		<weights>
+			<pilot-lb type="double">200</pilot-lb>
+			<round-lb type="double">0.33</round-lb>
+		</weights>
+	</yasim>
+
+	<nasal>
+		<camel>  
+			<file>Aircraft/sopwithCamel-Bombable/Nasal/camel-utils.nas</file>
+			<file>Aircraft/sopwithCamel-Bombable/Nasal/fuel.nas</file>
+			<file>Aircraft/sopwithCamel-Bombable/Nasal/yawstring.nas</file>
+			<file>Aircraft/sopwithCamel-Bombable/Nasal/weapons.nas</file>         
+			<file>Aircraft/sopwithCamel-Bombable/Nasal/JSBSim.nas</file>
+			<file>Aircraft/sopwithCamel-Bombable/Nasal/crashmenu.nas</file>
+      <file>Aircraft/sopwithCamel-Bombable/Nasal/camel-walk-views.nas</file>
+ 		</camel>
+		<walkview>
+			<file>Aircraft/Generic/WalkView/walkview.nas</file>
+		</walkview>		        
+	</nasal>
+</PropertyList>
