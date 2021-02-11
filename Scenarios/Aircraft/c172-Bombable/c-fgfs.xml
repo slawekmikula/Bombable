@@ -6,9 +6,9 @@
 
  <author>me</author>  
 
- <path>Models/c172p.ac</path>
+ <path>[addon=a.bhugh.Bombable]Scenarios/Aircraft/Models/c172p.ac</path>
 
- <texture-path>Textures/c-fgfs</texture-path>
+ <texture-path>[addon=a.bhugh.Bombable]Scenarios/Aircraft/Textures/c-fgfs</texture-path>
  
  
  

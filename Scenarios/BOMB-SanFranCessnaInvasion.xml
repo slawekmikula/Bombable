@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
 	<scenario>
+                  <name>Cessna Invasion</name>
 		<description>This scenario puts a fleet of Cessnas in the skies of San Francisco Bay near the San Francisco International Airport (KSFO).
 
 The fleet starts just east of the airport and proceeds on a northerly heading at 1300 feet AGL.  If you take off runway 1R or 1L, when you get airborne look to your right and you will see a row of Cessnas there.
@@ -23,7 +24,7 @@ Any aircraft that shoots guns or drops bombs can damage the Cessnas.  The Fairch
       <type>aircraft</type>
       <callsign>Cessna1_20</callsign>
 			<name>Cessna1_20</name>
-			<model type="string">Aircraft/c172-Bombable/c-fgfs.xml</model>
+			<model type="string">[addon=a.bhugh.Bombable]Scenarios/Aircraft/c172-Bombable/c-fgfs.xml</model>
       <latitude type="double">37.608720</latitude>
 			<longitude type="double">-122.3076</longitude>
 			<altitude>1200</altitude>
@@ -38,7 +39,7 @@ Any aircraft that shoots guns or drops bombs can damage the Cessnas.  The Fairch
       <type>aircraft</type>
       <callsign>Cessna1_23</callsign>
 			<name>Cessna1_23</name>
-			<model type="string">Aircraft/c172-Bombable/c-fgfs.xml</model>
+			<model type="string">[addon=a.bhugh.Bombable]Scenarios/Aircraft/c172-Bombable/c-fgfs.xml</model>
       <latitude type="double">37.608200</latitude>
 			<longitude type="double">-122.2988</longitude>
 			<altitude type="double">1200</altitude>
@@ -53,7 +54,7 @@ Any aircraft that shoots guns or drops bombs can damage the Cessnas.  The Fairch
       <type>aircraft</type>
       <callsign>Cessna1_26</callsign>
 			<name>Cessna1_26</name>
-			<model type="string">Aircraft/c172-Bombable/c-fgfs.xml</model> 
+			<model type="string">[addon=a.bhugh.Bombable]Scenarios/Aircraft/c172-Bombable/c-fgfs.xml</model> 
       <latitude type="double">37.608470</latitude>
 			<longitude type="double">-122.2692</longitude>
 			<altitude>1200</altitude>
@@ -69,7 +70,7 @@ Any aircraft that shoots guns or drops bombs can damage the Cessnas.  The Fairch
       <type>aircraft</type>
       <callsign>Cessna1_29</callsign>
 			<name>Cessna1_29</name>
-			<model type="string">Aircraft/c172-Bombable/c-fgfs.xml</model> 
+			<model type="string">[addon=a.bhugh.Bombable]Scenarios/Aircraft/c172-Bombable/c-fgfs.xml</model> 
       <latitude type="double">37.608100</latitude>
 			<longitude type="double">-122.2368</longitude>
 			<altitude>1200</altitude>
@@ -84,7 +85,7 @@ Any aircraft that shoots guns or drops bombs can damage the Cessnas.  The Fairch
       <type>aircraft</type>
       <callsign>Cessna1_30</callsign>
 			<name>Cessna1_30</name>        
-      <model type="string">Aircraft/c172-Bombable/c-fgfs.xml</model> 
+      <model type="string">[addon=a.bhugh.Bombable]Scenarios/Aircraft/c172-Bombable/c-fgfs.xml</model> 
       <latitude type="double">37.608950</latitude>
 			<longitude type="double">-122.2059</longitude>
 			<altitude>1200</altitude>
@@ -98,7 +99,7 @@ Any aircraft that shoots guns or drops bombs can damage the Cessnas.  The Fairch
       <type>aircraft</type>
       <callsign>Cessna1_31</callsign>
 			<name>Cessna1_31</name>
-      <model type="string">Aircraft/c172-Bombable/c-fgfs.xml</model> 
+      <model type="string">[addon=a.bhugh.Bombable]Scenarios/Aircraft/c172-Bombable/c-fgfs.xml</model> 
       <latitude type="double">37.608950</latitude>
 			<longitude type="double">-122.1759</longitude>
 			<altitude>1200</altitude>
@@ -112,7 +113,7 @@ Any aircraft that shoots guns or drops bombs can damage the Cessnas.  The Fairch
       <type>aircraft</type>
       <callsign>Cessna1_32</callsign>
 			<name>Cessna1_32</name>
-      <model type="string">Aircraft/c172-Bombable/c-fgfs.xml</model> 
+      <model type="string">[addon=a.bhugh.Bombable]Scenarios/Aircraft/c172-Bombable/c-fgfs.xml</model> 
       <latitude type="double">37.608950</latitude>
 			<longitude type="double">-122.14059</longitude>
 			<altitude>1200</altitude>
